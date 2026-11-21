@@ -146,3 +146,117 @@ a{color:inherit;text-decoration:none}
   object-fit: cover;
   border-radius: 2px;
 }
+
+/* ===== PERVYWEB MOBILE & RESPONSIVE UPGRADE ===== */
+
+.intro-screen {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 20px 16px;
+}
+
+.intro-card {
+  width: 100%;
+  max-width: 650px;
+  padding: 25px 12px;
+}
+
+.intro-card h1 {
+  width: 100%;
+  font-size: clamp(2rem, 8vw, 5.7rem);
+  line-height: 1.12;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.intro-card h1 em {
+  display: inline-block;
+  max-width: 100%;
+  font-size: .82em;
+  overflow-wrap: anywhere;
+  letter-spacing: -.035em;
+}
+
+.intro-note {
+  font-size: clamp(.9rem, 3.5vw, 1.1rem);
+  line-height: 1.6;
+}
+
+.primary-btn {
+  max-width: 100%;
+  white-space: normal;
+}
+
+@media (max-width: 480px) {
+  .intro-card {
+    padding: 20px 5px;
+  }
+
+  .intro-card h1 {
+    font-size: clamp(2rem, 9vw, 2.8rem);
+  }
+
+  .intro-card h1 em {
+    font-size: .78em;
+    letter-spacing: -.04em;
+  }
+
+  .section-wrap {
+    width: calc(100% - 28px);
+  }
+
+  .story-card {
+    overflow-wrap: anywhere;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    max-width: 340px;
+    margin-inline: auto;
+  }
+
+  .photo-card {
+    width: 100%;
+  }
+
+  .gallery-photo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+  }
+
+  .close-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .music-dock {
+    max-width: calc(100vw - 20px);
+  }
+}
+
+@media (min-width: 768px) {
+  .intro-card {
+    max-width: 750px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .section-wrap {
+    width: min(1100px, calc(100% - 80px));
+  }
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+img {
+  max-width: 100%;
+}
