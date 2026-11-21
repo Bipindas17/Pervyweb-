@@ -11,7 +11,320 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body> 
+<!-- ===== PERVYWEB BUBU GATE ===== -->
+
+<div id="bubuGate">
+  <div class="bubu-hearts" id="bubuHearts"></div>
+
+  <div class="bubu-card">
+
+    <div class="bubu-tag">A LITTLE REQUEST FOR YOU ♡</div>
+
+    <div class="bubu-bear">
+      🧸
+      <span class="bear-heart">💗</span>
+    </div>
+
+    <div class="bubu-sparkles">✨ 💕 ✨</div>
+
+    <h1>Prekshuuuuu!</h1>
+
+    <p class="bubu-question">
+      Can I get <span>bubu?</span> 🥺👉👈
+    </p>
+
+    <p id="bubuMessage">
+      Pleaseeeee baaeeebbbbyyyyy! 💗
+    </p>
+
+    <div class="bubu-buttons">
+      <button id="bubuYes">
+        YESSS 💗
+      </button>
+
+      <button id="bubuNo">
+        NO 🙄
+      </button>
+    </div>
+
+    <div class="bubu-footer">
+      MADE WITH LOVE BY YOUR IDIOT ♡
+    </div>
+
+  </div>
+</div>
+
+<style>
+#bubuGate {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 20% 20%,#fff 0%,transparent 35%),
+    radial-gradient(circle at 80% 80%,#f9c4df 0%,transparent 40%),
+    linear-gradient(135deg,#ffe9f2,#f8c5dc,#fff0f6);
+  font-family: inherit;
+}
+
+.bubu-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 440px;
+  padding: 35px 23px;
+  text-align: center;
+  border-radius: 32px;
+  background: rgba(255,255,255,.78);
+  border: 1px solid rgba(255,255,255,.9);
+  box-shadow: 0 25px 80px rgba(184,83,135,.2);
+  backdrop-filter: blur(15px);
+  animation: bubuAppear 1s cubic-bezier(.2,.8,.2,1);
+}
+
+@keyframes bubuAppear {
+  from { opacity:0; transform:translateY(40px) scale(.85); }
+  to { opacity:1; transform:translateY(0) scale(1); }
+}
+
+.bubu-tag {
+  color:#c16b94;
+  font-size:10px;
+  letter-spacing:3px;
+  font-weight:bold;
+}
+
+.bubu-bear {
+  position:relative;
+  display:inline-block;
+  margin:20px 0 5px;
+  font-size:85px;
+  animation: bearFloat 2.5s ease-in-out infinite;
+}
+
+@keyframes bearFloat {
+  0%,100% { transform:translateY(0) rotate(-5deg); }
+  50% { transform:translateY(-13px) rotate(5deg); }
+}
+
+.bear-heart {
+  position:absolute;
+  right:-15px;
+  top:5px;
+  font-size:30px;
+  animation: heartBeat 1.2s infinite;
+}
+
+@keyframes heartBeat {
+  0%,100% { transform:scale(1); }
+  50% { transform:scale(1.3); }
+}
+
+.bubu-sparkles {
+  font-size:18px;
+  animation:sparkle 2s infinite;
+}
+
+@keyframes sparkle {
+  50% { opacity:.45; transform:scale(.9); }
+}
+
+.bubu-card h1 {
+  color:#bc5d8b;
+  font-size:clamp(30px,8vw,43px);
+  margin:15px 0;
+}
+
+.bubu-question {
+  color:#70435c;
+  font-size:clamp(20px,5vw,25px);
+  font-weight:800;
+}
+
+.bubu-question span {
+  color:#e36b9f;
+  text-shadow:0 0 15px #f6b2d0;
+}
+
+#bubuMessage {
+  min-height:28px;
+  color:#b87594;
+  font-size:14px;
+  margin:20px 0;
+}
+
+.bubu-buttons {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:15px;
+  flex-wrap:wrap;
+  margin:25px 0;
+}
+
+.bubu-buttons button {
+  min-width:115px;
+  padding:15px 23px;
+  border:0;
+  border-radius:50px;
+  font-size:15px;
+  font-weight:800;
+  cursor:pointer;
+  transition:transform .25s,box-shadow .25s;
+}
+
+#bubuYes {
+  color:white;
+  background:linear-gradient(135deg,#ed83b1,#ce5590);
+  box-shadow:0 8px 22px #d66c9b55;
+  animation:yesPulse 2s infinite;
+}
+
+@keyframes yesPulse {
+  50% { box-shadow:0 8px 32px #d66c9b99; }
+}
+
+#bubuYes:hover {
+  transform:scale(1.1);
+}
+
+#bubuNo {
+  color:#a65d7d;
+  background:#ffe5f0;
+}
+
+#bubuNo:hover {
+  transform:rotate(-5deg);
+}
+
+.bubu-footer {
+  color:#c58ba7;
+  font-size:9px;
+  letter-spacing:2px;
+  margin-top:20px;
+}
+
+.floating-bubu-heart {
+  position:absolute;
+  bottom:-40px;
+  pointer-events:none;
+  animation:floatUp linear forwards;
+  opacity:.7;
+}
+
+@keyframes floatUp {
+  to {
+    transform:translateY(-115vh) rotate(360deg);
+    opacity:0;
+  }
+}
+
+#bubuGate.bubu-exit {
+  animation:gateExit .85s forwards;
+  pointer-events:none;
+}
+
+@keyframes gateExit {
+  to { opacity:0; transform:scale(1.08); }
+}
+
+@media(max-width:480px) {
+  .bubu-card { padding:28px 16px; }
+  .bubu-bear { font-size:72px; }
+  .bubu-buttons { gap:10px; }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  #bubuGate *, #bubuGate *::before {
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+  }
+}
+</style>
+
+<script>
+(() => {
+  const gate = document.getElementById("bubuGate");
+  const yes = document.getElementById("bubuYes");
+  const no = document.getElementById("bubuNo");
+  const message = document.getElementById("bubuMessage");
+  const hearts = document.getElementById("bubuHearts");
+
+  if (!gate || !yes || !no) return;
+
+  const messages = [
+    "Pleaseee, I want bubu 🥺",
+    "Just one bubu pleassseee 😭",
+    "Baaeeebbbbyyyyy, pretty please? 💗",
+    "Your Idiot is waiting for bubu 🥹",
+    "Nooo, I need my bubu 😭",
+    "CAN I GET BUBU PLEASEEE? 💋",
+    "I even brought you a teddy! 🧸"
+  ];
+
+  let attempts = 0;
+
+  no.addEventListener("click", () => {
+    message.textContent =
+      messages[attempts % messages.length];
+    attempts++;
+
+    message.animate(
+      [
+        { transform:"scale(.9)", opacity:.4 },
+        { transform:"scale(1.08)", opacity:1 },
+        { transform:"scale(1)", opacity:1 }
+      ],
+      { duration:400 }
+    );
+  });
+
+  function createHeart() {
+    const heart = document.createElement("span");
+    heart.className = "floating-bubu-heart";
+    heart.textContent = ["💗","💕","💖","♡","✨"][
+      Math.floor(Math.random()*5)
+    ];
+
+    heart.style.left = Math.random()*100 + "%";
+    heart.style.fontSize = (15+Math.random()*20)+"px";
+    heart.style.animationDuration = (5+Math.random()*5)+"s";
+
+    hearts.appendChild(heart);
+    setTimeout(() => heart.remove(),10000);
+  }
+
+  const heartTimer = setInterval(createHeart,450);
+
+  yes.addEventListener("click", () => {
+    clearInterval(heartTimer);
+
+    for(let i=0;i<35;i++) {
+      createHeart();
+    }
+
+    gate.classList.add("bubu-exit");
+
+    setTimeout(() => {
+      gate.remove();
+      document.body.style.overflow = "";
+
+      // Show the original Pervyweb welcome screen.
+      // The visitor can then tap its button to enter.
+    },850);
+  });
+
+  document.body.style.overflow = "hidden";
+})();
+</script>
+
+<!-- ===== END BUBU GATE ===== -->
+
   <div class="ambient ambient-one" aria-hidden="true"></div>
   <div class="ambient ambient-two" aria-hidden="true"></div>
   <div class="floating-hearts" id="floatingHearts" aria-hidden="true"></div>
